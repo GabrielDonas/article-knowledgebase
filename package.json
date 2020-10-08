@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app"
+    "start": "nodemon app"
   },
   "author": "Gabriel Donas",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.10.8",
     "pug": "^3.0.0"
   }
 }
