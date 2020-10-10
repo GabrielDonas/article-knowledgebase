@@ -2,9 +2,21 @@ doctype html
 html(lang="en")
   head
     title Knowledge Base
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
   body
-    block content
-    br
-    hr
-    footer
-        p Copyright &copy; 2017
+    nav.navbar.navbar-expand.navbar-dark.bg-dark
+      a.navbar-brand(href='/') Knowledge DB
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExample02' aria-controls='navbarsExample02' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExample02.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/articles/add') Add Article
+    .container.mt-2
+      block content
+      br
+      hr
+      footer
+        p Copyright &copy; 2020

@@ -17,6 +17,7 @@ db.once('open', function() {
 
 //Bring Models
 let Article = require('./models/article')
+const article = require('./models/article')
 
 //Load View Engine
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +28,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//Set public folder
+app.use(express.static(path.join(__dirname, 'public')))
+
 //Home Route
 app.get('/', function(req, res){
   Article.find({}, (err, articles) => {
@@ -34,17 +38,26 @@ app.get('/', function(req, res){
       console.log(err)
     } else {
     res.render('index', {
-      title: 'This is an article',
+      title: 'List of Articles',
       articles: articles
     });
   }
   })
 });
 
-//Add Route
+//Add Route Get All
 app.get('/articles/add', function(req, res){
   res.render('add_article', {
     title: "add article"
+  })
+})
+
+//Add Route single article
+app.get('/article/:id', (req, res) => {
+  Article.findById(req.params.id, (err, article) => {
+    res.render('article', {
+      article: article
+    })
   })
 })
 
