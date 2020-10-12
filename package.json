@@ -12,6 +12,8 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.2",
     "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
     "mongoose": "^5.10.8",
     "pug": "^3.0.0"
   }
